@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>webook-common</module>
+        <module>webook-spring-boot-starter-biz-operationlog</module>
     </modules>
 
     <artifactId>webook-framework</artifactId>
