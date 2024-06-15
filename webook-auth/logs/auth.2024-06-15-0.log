@@ -1,0 +1,72 @@
+2024-06-15 18:21:20.540 [main] INFO  com.jacob.micro.auth.DruidTests - Starting DruidTests using Java 17.0.11 with PID 12360 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-15 18:21:20.540 [main] INFO  com.jacob.micro.auth.DruidTests - The following 1 profile is active: "dev"
+2024-06-15 18:21:21.876 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-15 18:21:22.383 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-15 18:21:22.861 [main] INFO  com.jacob.micro.auth.DruidTests - Started DruidTests in 2.65 seconds (process running for 3.494)
+2024-06-15 18:21:23.668 [main] INFO  com.jacob.micro.auth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAlqO25td5BaNF1eBc33MIGo8UPR+KWRcefYNlbs44HrK+5T+5GTsEbUk/DXya2fIyZudfWgNf4O/Nimsv9K2aowIDAQABAkAN3zah7F7DLT8D/1ZeGpA4+rF0ILO5sr5s8+aP1rxMeA4525iW2b4KD5U+sU5/OQIK6ELJw8F0Eb5+9ppDBqHhAiEA8iZHTsTPGrFmWKRoFs+ozvhC6COgiD9GB54ymaojkqECIQCfQXuUdCDHDFUEsa+MJBBvPalgwDGK8Sa+ahKWZnaqwwIhAKASc9L7QRkZKlnwnKpvrdzbuobwfj9y7F0+055HHWrhAiAqSEB/UbXCI0wPSv3Iv2p9nmlx/pUoxo360D7PH7Ux8QIgMLoSvnBd+mAXXFptulZK7rYeN4PVBXv3fiykiyDZRzo=
+2024-06-15 18:21:23.672 [main] INFO  com.jacob.micro.auth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJajtubXeQWjRdXgXN9zCBqPFD0filkXHn2DZW7OOB6yvuU/uRk7BG1JPw18mtnyMmbnX1oDX+DvzYprL/StmqMCAwEAAQ==
+2024-06-15 18:21:23.675 [main] INFO  com.jacob.micro.auth.DruidTests - password: iZzgyQ4XmGNPK44lfazgEDB2Pwn9qxfu4DVzkL14mHi4U1DpFJUWBUb+R65iAx1rOWPRNIGH327qfe3J2n/zxA==
+2024-06-15 18:21:23.711 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jacob.micro.auth.WebookAuthApplicationTests]: WebookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-15 18:21:23.713 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jacob.micro.auth.WebookAuthApplication for test class com.jacob.micro.auth.WebookAuthApplicationTests
+2024-06-15 18:21:23.782 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-06-15 18:21:23.935 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-06-15 18:21:23.945 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-06-15 18:21:23.951 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-06-15 18:21:24.026 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-06-15T18:21:23.950032100(LocalDateTime), 2024-06-15T18:21:23.950032100(LocalDateTime)
+2024-06-15 18:21:24.058 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-06-15 18:21:24.063 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-06-15 18:21:24.068 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-06-15 18:21:24.096 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-06-15 18:21:24.125 [main] INFO  com.jacob.micro.auth.WebookAuthApplicationTests - User: {"id":2,"username":"犬小哈","createTime":"2024-06-14 14:27:37","updateTime":"2024-06-14 14:27:37"}
+2024-06-15 18:21:24.130 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-06-15 18:21:24.132 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-06-15T18:21:24.130071200(LocalDateTime), 2(Long)
+2024-06-15 18:21:24.237 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-15 18:21:24.244 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-15 18:24:03.842 [main] INFO  com.jacob.micro.auth.DruidTests - Starting DruidTests using Java 17.0.11 with PID 36248 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-15 18:24:03.843 [main] INFO  com.jacob.micro.auth.DruidTests - The following 1 profile is active: "dev"
+2024-06-15 18:24:05.087 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-15 18:24:05.536 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-15 18:24:05.849 [main] INFO  com.jacob.micro.auth.DruidTests - Started DruidTests in 2.347 seconds (process running for 3.024)
+2024-06-15 18:24:06.412 [main] INFO  com.jacob.micro.auth.DruidTests - privateKey: MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEAzTTVV5pFCHGjbk3YM8aqR9ji7RLRUJ1KporOjElk49QOBh0IRujoqwxUY98pfFWSVCTRmJ035hjotGdBDajzKwIDAQABAkAK3kR6WkpTsykTu3266Ee2fG8wXTHG0j3U6j8cQPrd8hHO0TuuQGTnxzwAyl7VnLyTokCKIXgtq+K4+xDyMJWxAiEA/nSlqpTiRLUxB9HhHF+PKITJYCcqN01A3D78m9fAvPMCIQDOc6qpeo60d/LE3HTSoHUfXWuCOxeGTXZxcAxRxqWe6QIgPSy2F4irzXDyVLr0r+mZdVhXQbKox5rfGRRbjuwT/lkCIACCpK9akDO+ACmgaeGDaAa10mg2AS7hziMlpcIl/Y7RAiBzN8sUcfwBbwUsZIJ+/fT8RWchmsGQyqyhDBRKzGY5Lw==
+2024-06-15 18:24:06.413 [main] INFO  com.jacob.micro.auth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAM001VeaRQhxo25N2DPGqkfY4u0S0VCdSqaKzoxJZOPUDgYdCEbo6KsMVGPfKXxVklQk0ZidN+YY6LRnQQ2o8ysCAwEAAQ==
+2024-06-15 18:24:06.417 [main] INFO  com.jacob.micro.auth.DruidTests - password: xS9q34d4U7TpHFRRLNyQ/0jer/HGnUngh3XkAENAy49apB1aWllHygEakZFH2SCe/U/3tL7VkGCT1fBI91DQPA==
+2024-06-15 18:24:06.444 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jacob.micro.auth.WebookAuthApplicationTests]: WebookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-15 18:24:06.447 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jacob.micro.auth.WebookAuthApplication for test class com.jacob.micro.auth.WebookAuthApplicationTests
+2024-06-15 18:24:06.504 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-06-15 18:24:06.661 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-06-15 18:24:06.669 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-06-15 18:24:06.677 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-06-15 18:24:06.754 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-06-15T18:24:06.677936400(LocalDateTime), 2024-06-15T18:24:06.677936400(LocalDateTime)
+2024-06-15 18:24:06.768 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-06-15 18:24:06.775 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-06-15 18:24:06.781 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-06-15 18:24:06.799 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-06-15 18:24:06.830 [main] INFO  com.jacob.micro.auth.WebookAuthApplicationTests - User: {"id":2,"username":"犬小哈","createTime":"2024-06-14 14:27:37","updateTime":"2024-06-14 14:27:37"}
+2024-06-15 18:24:06.836 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-06-15 18:24:06.838 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-06-15T18:24:06.836095300(LocalDateTime), 2(Long)
+2024-06-15 18:24:06.930 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-15 18:24:06.935 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-15 18:32:38.957 [main] INFO  com.jacob.micro.auth.DruidTests - Starting DruidTests using Java 17.0.11 with PID 34500 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-15 18:32:38.958 [main] INFO  com.jacob.micro.auth.DruidTests - The following 1 profile is active: "dev"
+2024-06-15 18:32:40.395 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-15 18:32:41.059 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-15 18:32:41.625 [main] INFO  com.jacob.micro.auth.DruidTests - Started DruidTests in 2.987 seconds (process running for 3.679)
+2024-06-15 18:32:42.392 [main] INFO  com.jacob.micro.auth.DruidTests - privateKey: MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEA5tqgc8t1VlFCrwG8sz9H0VUtgo1+2Q6xK9Gyb+SlbBuNkmNxddvslpty2N9SfegCbI6lXO58XhE3DIZgPvHR7wIDAQABAkAVgpiBwZrwzIiMmvpUr1hHQosHh5yip/JNNXBNab4aKPe3CKiIu9O/WLuIH+EG+hHtJJCirRQx4tSW8KOEEOA9AiEA5x/3K/6DVrtxtD9oZq8dzOgF1Pfnr6vpKOteeSlv+n0CIQD/szLVqc495TRQaXzo4RXB7afTNtxhH8ho8YBXEk392wIhAOTlYnxelqJqB0T02yd+3KuXSldNoVX4knSlDa4/HJhdAiACQ0+73Fja62BfJc/ZL8TFhpjpoZ6prWJUq257Vsoh6QIhALxJlyaxRuXOT47TNuynY0MbzmZ3zLp8QI86wOuMTYwY
+2024-06-15 18:32:42.395 [main] INFO  com.jacob.micro.auth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAObaoHPLdVZRQq8BvLM/R9FVLYKNftkOsSvRsm/kpWwbjZJjcXXb7JabctjfUn3oAmyOpVzufF4RNwyGYD7x0e8CAwEAAQ==
+2024-06-15 18:32:42.397 [main] INFO  com.jacob.micro.auth.DruidTests - password: BhUPsbJytZp4ZCzp/XAQGswlh7Fje9w/YtJxm1gPmzkPCN939BcxLwsfHVpWMefRdgZVU4+yt+Mi8M1t8PRwLg==
+2024-06-15 18:32:42.434 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jacob.micro.auth.WebookAuthApplicationTests]: WebookAuthApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-15 18:32:42.436 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jacob.micro.auth.WebookAuthApplication for test class com.jacob.micro.auth.WebookAuthApplicationTests
+2024-06-15 18:32:42.504 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==>  Preparing: delete from t_user where id = ?
+2024-06-15 18:32:42.611 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - ==> Parameters: 1(Long)
+2024-06-15 18:32:42.618 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.deleteByPrimaryKey - <==    Updates: 0
+2024-06-15 18:32:42.625 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (id, username, create_time, update_time) values (?, ?, ?, ?)
+2024-06-15 18:32:42.713 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: null, 犬小哈(String), 2024-06-15T18:32:42.625601900(LocalDateTime), 2024-06-15T18:32:42.625601900(LocalDateTime)
+2024-06-15 18:32:42.720 [main] DEBUG c.j.micro.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-06-15 18:32:42.725 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==>  Preparing: select id, username, create_time, update_time from t_user where id = ?
+2024-06-15 18:32:42.730 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - ==> Parameters: 2(Long)
+2024-06-15 18:32:42.746 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.selectByPrimaryKey - <==      Total: 1
+2024-06-15 18:32:42.773 [main] INFO  com.jacob.micro.auth.WebookAuthApplicationTests - User: {"id":2,"username":"犬小哈","createTime":"2024-06-14 14:27:37","updateTime":"2024-06-14 14:27:37"}
+2024-06-15 18:32:42.777 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==>  Preparing: update t_user set username = ?, create_time = ?, update_time = ? where id = ?
+2024-06-15 18:32:42.778 [main] DEBUG c.j.m.a.d.mapper.UserDOMapper.updateByPrimaryKey - ==> Parameters: 犬小哈教程(String), null, 2024-06-15T18:32:42.775938200(LocalDateTime), 2(Long)
+2024-06-15 18:32:42.867 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-15 18:32:42.873 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
