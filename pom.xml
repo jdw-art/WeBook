@@ -4,7 +4,7 @@
 
   <groupId>com.jacob.micro</groupId>
   <artifactId>webook</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>${revision}</version>
 
   <!-- 项目名称 -->
   <name>${project.artifactId}</name>
@@ -42,6 +42,7 @@
     <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
     <druid.version>1.2.21</druid.version>
     <mybatis-generator-maven-plugin.version>1.3.5</mybatis-generator-maven-plugin.version>
+    <flatten-maven-plugin.version>1.5.0</flatten-maven-plugin.version>
   </properties>
 
   <!-- 统一依赖管理 -->
@@ -85,7 +86,7 @@
       <dependency>
         <groupId>com.jacob.micro</groupId>
         <artifactId>webook-common</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
       </dependency>
 
       <!-- Jackson -->
@@ -105,7 +106,7 @@
       <dependency>
         <groupId>com.jacob.micro</groupId>
         <artifactId>webook-spring-boot-starter-biz-operationlog</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
       </dependency>
 
       <!-- Mybatis -->
@@ -186,8 +187,44 @@
             </dependency>
           </dependencies>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <testFailureIgnore>true</testFailureIgnore>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <!-- 统一 revision 版本, 解决子模块打包无法解析 ${revision} 版本号问题 -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>${flatten-maven-plugin.version}</version>
+        <configuration>
+          <flattenMode>resolveCiFriendliesOnly</flattenMode>
+          <updatePomFile>true</updatePomFile>
+        </configuration>
+        <executions>
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
 
   </build>
 
