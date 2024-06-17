@@ -1,0 +1,73 @@
+2024-06-16 18:01:31.259 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 34092 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:01:31.261 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:01:32.021 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:01:32.024 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:01:32.061 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:01:33.662 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:01:34.133 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:01:35.008 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 4.131 seconds (process running for 4.883)
+2024-06-16 18:01:36.303 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:01:36.310 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:02:39.929 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 32700 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:02:39.932 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:02:40.731 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:02:40.734 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:02:40.763 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:02:42.489 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:02:43.048 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:02:43.884 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 4.364 seconds (process running for 5.109)
+2024-06-16 18:02:44.818 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:02:44.830 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:03:50.398 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 18124 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:03:50.401 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:03:51.230 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:03:51.232 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:03:51.261 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:03:52.988 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:03:53.602 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:03:54.346 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 4.476 seconds (process running for 5.231)
+2024-06-16 18:03:55.932 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:03:55.939 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:07:21.541 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 7384 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:07:21.543 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:07:22.301 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:07:22.305 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:07:22.331 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:07:23.774 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:07:24.377 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:07:24.947 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 3.83 seconds (process running for 4.534)
+2024-06-16 18:07:26.308 [main] INFO  com.jacob.micro.auth.RedisTests - key 是否存在：true
+2024-06-16 18:07:26.335 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:07:26.341 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:07:33.050 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 30944 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:07:33.052 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:07:33.739 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:07:33.743 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:07:33.780 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:07:35.283 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:07:35.901 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:07:36.712 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 4.079 seconds (process running for 4.786)
+2024-06-16 18:07:37.995 [main] INFO  com.jacob.micro.auth.RedisTests - value 的值为：jacob
+2024-06-16 18:07:38.018 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:07:38.025 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:07:43.711 [main] INFO  com.jacob.micro.auth.RedisTests - Starting RedisTests using Java 17.0.11 with PID 30160 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 18:07:43.713 [main] INFO  com.jacob.micro.auth.RedisTests - The following 1 profile is active: "dev"
+2024-06-16 18:07:44.464 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:07:44.467 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:07:44.491 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:07:46.154 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:07:46.762 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:07:47.584 [main] INFO  com.jacob.micro.auth.RedisTests - Started RedisTests in 4.269 seconds (process running for 4.979)
+2024-06-16 18:07:48.787 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:07:48.797 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 20:18:40.157 [main] INFO  com.jacob.micro.auth.ThreadPoolTaskExecutorTests - Starting ThreadPoolTaskExecutorTests using Java 17.0.11 with PID 35100 (started by 姜文武 in E:\IDEAWorkplace\webook\webook\webook-auth)
+2024-06-16 20:18:40.158 [main] INFO  com.jacob.micro.auth.ThreadPoolTaskExecutorTests - The following 1 profile is active: "dev"
+2024-06-16 20:18:40.997 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 20:18:41.001 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 20:18:41.041 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-06-16 20:18:42.831 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 20:18:43.327 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 20:18:44.143 [main] INFO  com.jacob.micro.auth.ThreadPoolTaskExecutorTests - Started ThreadPoolTaskExecutorTests in 4.386 seconds (process running for 5.298)
+2024-06-16 20:18:44.713 [task-1] INFO  com.jacob.micro.auth.ThreadPoolTaskExecutorTests - 异步线程中说: 犬小哈专栏
+2024-06-16 20:18:44.726 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 20:18:44.732 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

@@ -1,0 +1,49 @@
+2024-06-16 17:52:12.589 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 17:52:12.614 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 17:52:18.802 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Starting WebookAuthApplication using Java 17.0.11 with PID 25560 (E:\IDEAWorkplace\webook\webook\webook-auth\target\classes started by 姜文武 in E:\IDEAWorkplace\webook\webook)
+2024-06-16 17:52:18.803 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - The following 1 profile is active: "dev"
+2024-06-16 17:52:19.677 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-16 17:52:19.678 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-06-16 17:52:19.678 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-06-16 17:52:19.682 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-06-16 17:52:19.690 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-16 17:52:19.691 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-16 17:52:19.813 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-16 17:52:19.814 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 981 ms
+2024-06-16 17:52:20.153 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 17:52:20.399 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 17:52:20.653 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-16 17:52:20.658 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Started WebookAuthApplication in 2.226 seconds (process running for 3.112)
+2024-06-16 17:52:40.927 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [Hm_lvt_8b02a318fde5831da10426656a43d03c=1712149871,1712738765;] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2024-06-16 17:52:40.948 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-16 17:52:40.948 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-16 17:52:40.949 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-16 17:52:40.993 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.jacob.micro.auth.controller.TestController
+2024-06-16 18:02:33.578 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-16 18:02:33.585 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-16 18:46:42.253 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Starting WebookAuthApplication using Java 17.0.11 with PID 32884 (E:\IDEAWorkplace\webook\webook\webook-auth\target\classes started by 姜文武 in E:\IDEAWorkplace\webook\webook)
+2024-06-16 18:46:42.255 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - The following 1 profile is active: "dev"
+2024-06-16 18:46:42.752 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-16 18:46:42.755 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-16 18:46:42.776 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-06-16 18:46:43.333 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-16 18:46:43.334 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-06-16 18:46:43.334 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-06-16 18:46:43.341 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-06-16 18:46:43.349 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-16 18:46:43.349 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-16 18:46:43.418 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-16 18:46:43.418 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1131 ms
+2024-06-16 18:46:43.956 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-16 18:46:44.160 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-16 18:46:44.439 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-16 18:46:44.444 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Started WebookAuthApplication in 2.578 seconds (process running for 2.94)
+2024-06-16 18:47:15.347 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-16 18:47:15.348 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-16 18:47:15.348 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-06-16 18:47:15.451 [http-nio-8080-exec-1] INFO  c.j.m.f.b.o.aspect.ApiOperationLogAspect - ====== 请求开始: [发送短信验证码], 入参: {"phone":"13362179496"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2024-06-16 18:47:15.741 [http-nio-8080-exec-1] INFO  c.j.m.a.service.impl.VerificationCodeServiceImpl - ==》 手机号：13362179496， 已发送验证码：【577348】
+2024-06-16 18:47:15.746 [http-nio-8080-exec-1] INFO  c.j.m.f.b.o.aspect.ApiOperationLogAspect - ====== 请求结束: [发送短信验证码], 耗时: 301ms, 出参: {"success":true,"message":null,"errorCode":null,"data":null} =================================== 
+2024-06-16 18:48:04.881 [http-nio-8080-exec-3] INFO  c.j.m.f.b.o.aspect.ApiOperationLogAspect - ====== 请求开始: [发送短信验证码], 入参: {"phone":"13362179496"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2024-06-16 18:48:04.885 [http-nio-8080-exec-3] WARN  c.j.micro.auth.exception.GlobalExceptionHandler - /verification/code/send request fail, errorCode: AUTH-20000, errorMessage: 请求太频繁，请3分钟后再试
