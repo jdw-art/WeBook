@@ -14,11 +14,30 @@ public class RedisKeyConstants {
     private static final String VERIFICATION_CODE_KEY_PREFIX = "verification_code:";
 
     /**
+     * 微书全局 ID 生成器 KEY
+     */
+    public static final String WEBOOK_ID_GENERATOR_KEY = "webook_id_generator";
+
+    /**
      * 构建验证码KEY
      * @param phone
      * @return
      */
     public static String buildVerificationCodeKey(String phone) {
         return VERIFICATION_CODE_KEY_PREFIX + phone;
+    }
+
+    /**
+     * 用户角色数据 KEY 前缀
+     */
+    private static final String USER_ROLE_KEY_PREFIX = "user:roles:";
+
+    /**
+     * 构建验证码 KEY
+     * @param phone
+     * @return
+     */
+    public static String buildUserRoleKey(String phone) {
+        return USER_ROLE_KEY_PREFIX + phone;
     }
 }
