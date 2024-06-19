@@ -134,8 +134,6 @@ public class UserServiceImpl implements UserService {
                // 添加入库
                userDOMapper.insert(userDO);
 
-               int i = 1 / 0;
-
                // 获取刚刚添加入库的用户ID
                Long userId = userDO.getId();
 
