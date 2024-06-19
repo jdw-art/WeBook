@@ -16,7 +16,7 @@ public class RedisKeyConstants {
     /**
      * 微书全局 ID 生成器 KEY
      */
-    public static final String WEBOOK_ID_GENERATOR_KEY = "webook_id_generator";
+    public static final String WEBOOK_ID_GENERATOR_KEY = "webook.id.generator";
 
     /**
      * 构建验证码KEY
