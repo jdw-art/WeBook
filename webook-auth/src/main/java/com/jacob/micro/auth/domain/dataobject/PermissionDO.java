@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
 public class PermissionDO {
     private Long id;
@@ -35,4 +35,5 @@ public class PermissionDO {
     private LocalDateTime updateTime;
 
     private Boolean isDeleted;
+
 }
