@@ -25,7 +25,7 @@ public class UserDO {
 
     private String avatar;
 
-    private Date birthday;
+    private LocalDateTime birthday;
 
     private String backgroundImg;
 

@@ -24,4 +24,5 @@ public class UserRoleDO {
     private LocalDateTime updateTime;
 
     private Boolean isDeleted;
+
 }

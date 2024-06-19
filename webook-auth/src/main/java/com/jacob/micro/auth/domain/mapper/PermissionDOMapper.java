@@ -2,6 +2,8 @@ package com.jacob.micro.auth.domain.mapper;
 
 import com.jacob.micro.auth.domain.dataobject.PermissionDO;
 
+import java.util.List;
+
 public interface PermissionDOMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -11,7 +13,15 @@ public interface PermissionDOMapper {
 
     PermissionDO selectByPrimaryKey(Long id);
 
+    /**
+     * 查询所有被启用的权限
+     *
+     * @return
+     */
+    List<PermissionDO> selectAppEnabledList();
+
     int updateByPrimaryKeySelective(PermissionDO record);
 
     int updateByPrimaryKey(PermissionDO record);
+
 }
