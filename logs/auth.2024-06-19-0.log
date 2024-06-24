@@ -745,3 +745,45 @@ Caused by: org.apache.ibatis.binding.BindingException: Parameter 'roleIds' not f
 2024-06-19 21:07:50.768 [http-nio-8080-exec-3] DEBUG c.j.m.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
 2024-06-19 21:07:50.769 [http-nio-8080-exec-3] INFO  com.jacob.micro.auth.service.impl.UserServiceImpl - ==> 用户是否注册，phone：13362179496，userDo：{"id":6,"xiaohashuId":null,"password":null,"nickname":null,"avatar":null,"birthday":null,"backgroundImg":null,"phone":null,"sex":null,"status":null,"introduction":null,"createTime":null,"updateTime":null,"isDeleted":null}
 2024-06-19 21:07:50.807 [http-nio-8080-exec-3] INFO  c.j.m.f.b.o.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录或注册], 耗时: 55ms, 出参: {"success":true,"message":null,"errorCode":null,"data":"7ce10b78-563a-4d3e-bfe6-5e19bbd56799"} =================================== 
+2024-06-19 21:12:52.247 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-19 21:12:52.259 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-19 21:12:56.115 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Starting WebookAuthApplication using Java 17.0.11 with PID 7116 (E:\IDEAWorkplace\webook\webook\webook-auth\target\classes started by 姜文武 in E:\IDEAWorkplace\webook\webook)
+2024-06-19 21:12:56.116 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - The following 1 profile is active: "dev"
+2024-06-19 21:12:56.601 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-19 21:12:56.603 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-19 21:12:56.623 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-06-19 21:12:57.147 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-19 21:12:57.148 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-06-19 21:12:57.148 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-06-19 21:12:57.149 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-06-19 21:12:57.156 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 21:12:57.156 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-19 21:12:57.235 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 21:12:57.236 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1089 ms
+2024-06-19 21:12:57.309 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-19 21:12:57.568 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-19 21:12:58.313 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-19 21:12:58.318 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Started WebookAuthApplication in 2.562 seconds (process running for 2.931)
+2024-06-19 21:12:58.319 [main] INFO  c.j.m.auth.runner.PushRolePermissions2RedisRunner - ==> 服务启动，开始同步角色权限数据到 Redis 中...
+2024-06-19 21:12:58.584 [main] WARN  c.j.m.auth.runner.PushRolePermissions2RedisRunner - ==> 角色权限数据已经同步至 Redis 中，不再同步...
+2024-06-19 21:16:00.997 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-19 21:16:01.009 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-19 21:16:02.791 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Starting WebookAuthApplication using Java 17.0.11 with PID 34744 (E:\IDEAWorkplace\webook\webook\webook-auth\target\classes started by 姜文武 in E:\IDEAWorkplace\webook\webook)
+2024-06-19 21:16:02.793 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - The following 1 profile is active: "dev"
+2024-06-19 21:16:03.358 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-19 21:16:03.362 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-19 21:16:03.395 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2024-06-19 21:16:03.978 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-19 21:16:03.978 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.34] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-06-19 21:16:03.978 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.34] using APR version [1.7.0].
+2024-06-19 21:16:03.980 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1o  3 May 2022]
+2024-06-19 21:16:03.987 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 21:16:03.987 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-19 21:16:04.073 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 21:16:04.073 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1250 ms
+2024-06-19 21:16:04.151 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-19 21:16:04.397 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-19 21:16:05.123 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-19 21:16:05.127 [main] INFO  com.jacob.micro.auth.WebookAuthApplication - Started WebookAuthApplication in 2.682 seconds (process running for 3.048)
+2024-06-19 21:16:05.129 [main] INFO  c.j.m.auth.runner.PushRolePermissions2RedisRunner - ==> 服务启动，开始同步角色权限数据到 Redis 中...
+2024-06-19 21:16:05.415 [main] WARN  c.j.m.auth.runner.PushRolePermissions2RedisRunner - ==> 角色权限数据已经同步至 Redis 中，不再同步...
