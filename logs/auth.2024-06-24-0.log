@@ -3845,3 +3845,9 @@ Caused by: com.alibaba.druid.pool.DataSourceClosedException: dataSource already 
 2024-06-24 20:21:38.329 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-webook-110.41.141.141_8848] [subscribe] webook-auth+DEFAULT_GROUP+webook
 2024-06-24 20:21:38.329 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-webook-110.41.141.141_8848] [add-listener] ok, tenant=webook, dataId=webook-auth, group=DEFAULT_GROUP, cnt=1
 2024-06-24 20:21:38.329 [main] INFO  c.a.cloud.nacos.refresh.NacosContextRefresher - [Nacos Config] Listening config: dataId=webook-auth, group=DEFAULT_GROUP
+2024-06-24 20:48:05.815 [http-nio-8080-exec-2] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [Hm_lvt_8b02a318fde5831da10426656a43d03c=1712149871,1712738765;] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2024-06-24 20:48:05.836 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-24 20:48:05.838 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-24 20:48:05.871 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 32 ms
+2024-06-24 20:48:05.933 [http-nio-8080-exec-2] INFO  com.jacob.micro.auth.alarm.impl.SmsAlarmHelper - ==> 【短信告警】：系统出错！！！
