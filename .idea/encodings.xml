@@ -13,5 +13,7 @@
     <file url="file://$PROJECT_DIR$/webook-framework/webook-spring-boot-starter-biz-operationlog/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-framework/webook-spring-boot-starter-jackson/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-framework/webook-spring-boot-starter-jackson/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-gateway/src/main/resources" charset="UTF-8" />
   </component>
 </project>
