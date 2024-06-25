@@ -6,8 +6,10 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.jacob.micro.auth.constant.RedisKeyConstants;
 import com.jacob.micro.auth.constant.RoleConstants;
+import com.jacob.micro.auth.domain.dataobject.RoleDO;
 import com.jacob.micro.auth.domain.dataobject.UserDO;
 import com.jacob.micro.auth.domain.dataobject.UserRoleDO;
+import com.jacob.micro.auth.domain.mapper.RoleDOMapper;
 import com.jacob.micro.auth.domain.mapper.UserDOMapper;
 import com.jacob.micro.auth.domain.mapper.UserRoleDOMapper;
 import com.jacob.micro.auth.enums.LoginTypeEnum;
@@ -28,6 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,6 +52,8 @@ public class UserServiceImpl implements UserService {
     private UserRoleDOMapper userRoleDOMapper;
     @Resource
     private TransactionTemplate transactionTemplate;
+    @Resource
+    private RoleDOMapper roleDOMapper;
 
     @Override
     public Response<String> loginAndRegister(UserLoginRepVO userLoginRepVO) {
@@ -147,11 +152,14 @@ public class UserServiceImpl implements UserService {
                        .build();
                userRoleDOMapper.insert(userRoleDO);
 
-               // 将改用户的角色id存入redis中
-               List<Long> roleIds = Lists.newArrayList();
-               roleIds.add(RoleConstants.COMMON_USER_ROLE_ID);
-               String userRoleKey = RedisKeyConstants.buildUserRoleKey(phone);
-               redisTemplate.opsForValue().set(userRoleKey, JsonUtils.toJsonString(roleIds));
+               RoleDO roleDO = roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
+
+               // 将改用户的角色id存入redis中，指定初始容量为 1，这样可以减少在扩容时的性能开销
+               List<String> roles = new ArrayList<>();
+               roles.add(roleDO.getRoleKey());
+
+               String userRolesKey = RedisKeyConstants.buildUserRoleKey(userId);
+               redisTemplate.opsForValue().set(userRolesKey, JsonUtils.toJsonString(roles));
 
                return userId;
            } catch (Exception e) {
