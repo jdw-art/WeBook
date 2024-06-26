@@ -14,6 +14,7 @@ import com.jacob.micro.auth.domain.mapper.UserDOMapper;
 import com.jacob.micro.auth.domain.mapper.UserRoleDOMapper;
 import com.jacob.micro.auth.enums.LoginTypeEnum;
 import com.jacob.micro.auth.enums.ResponseCodeEnum;
+import com.jacob.micro.auth.filter.LoginUserContextHolder;
 import com.jacob.micro.auth.model.vo.user.UserLoginRepVO;
 import com.jacob.micro.auth.service.UserService;
 import com.jacob.micro.framework.common.enums.DeletedEnum;
@@ -168,5 +169,22 @@ public class UserServiceImpl implements UserService {
                return null;
            }
         });
+    }
+
+    /**
+     * 退出登录
+     * @param userId
+     * @return
+     */
+    @Override
+    public Response<?> logout() {
+
+        Long userId = LoginUserContextHolder.getUserId();
+
+        log.info("==> 用户退出登录，userId：{}", userId);
+
+        // 退出登录 （指定用户 ID）
+        StpUtil.logout(userId);
+        return Response.success();
     }
 }
