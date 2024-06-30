@@ -14,9 +14,9 @@ import com.jacob.micro.auth.domain.mapper.UserDOMapper;
 import com.jacob.micro.auth.domain.mapper.UserRoleDOMapper;
 import com.jacob.micro.auth.enums.LoginTypeEnum;
 import com.jacob.micro.auth.enums.ResponseCodeEnum;
-import com.jacob.micro.auth.filter.LoginUserContextHolder;
 import com.jacob.micro.auth.model.vo.user.UserLoginRepVO;
 import com.jacob.micro.auth.service.UserService;
+import com.jacob.micro.framework.biz.context.holder.LoginUserContextHolder;
 import com.jacob.micro.framework.common.enums.DeletedEnum;
 import com.jacob.micro.framework.common.enums.StatusEnum;
 import com.jacob.micro.framework.common.exception.BizException;
@@ -26,6 +26,7 @@ import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -55,6 +56,8 @@ public class UserServiceImpl implements UserService {
     private TransactionTemplate transactionTemplate;
     @Resource
     private RoleDOMapper roleDOMapper;
+    @Resource(name = "taskExecutor")
+    private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
     @Override
     public Response<String> loginAndRegister(UserLoginRepVO userLoginRepVO) {
@@ -173,7 +176,6 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 退出登录
-     * @param userId
      * @return
      */
     @Override
@@ -181,10 +183,16 @@ public class UserServiceImpl implements UserService {
 
         Long userId = LoginUserContextHolder.getUserId();
 
-        log.info("==> 用户退出登录，userId：{}", userId);
+        log.info("==> 用户退出登录, userId: {}", userId);
 
-        // 退出登录 （指定用户 ID）
+        threadPoolTaskExecutor.submit(() -> {
+            Long userId2 = LoginUserContextHolder.getUserId();
+            log.info("==> 异步线程中获取 userId: {}", userId2);
+        });
+
+        // 退出登录 (指定用户 ID)
         StpUtil.logout(userId);
+
         return Response.success();
     }
 }
