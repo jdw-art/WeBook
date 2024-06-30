@@ -13,6 +13,7 @@
         <module>webook-common</module>
         <module>webook-spring-boot-starter-biz-operationlog</module>
         <module>webook-spring-boot-starter-jackson</module>
+        <module>webook-spring-bot-starter-biz-context</module>
     </modules>
 
     <artifactId>webook-framework</artifactId>
