@@ -14,6 +14,7 @@ import com.jacob.micro.auth.domain.mapper.UserDOMapper;
 import com.jacob.micro.auth.domain.mapper.UserRoleDOMapper;
 import com.jacob.micro.auth.enums.LoginTypeEnum;
 import com.jacob.micro.auth.enums.ResponseCodeEnum;
+import com.jacob.micro.auth.model.vo.user.UpdatePasswordReqVO;
 import com.jacob.micro.auth.model.vo.user.UserLoginRepVO;
 import com.jacob.micro.auth.service.UserService;
 import com.jacob.micro.framework.biz.context.holder.LoginUserContextHolder;
@@ -27,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -58,6 +60,8 @@ public class UserServiceImpl implements UserService {
     private RoleDOMapper roleDOMapper;
     @Resource(name = "taskExecutor")
     private ThreadPoolTaskExecutor threadPoolTaskExecutor;
+    @Resource
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public Response<String> loginAndRegister(UserLoginRepVO userLoginRepVO) {
@@ -66,6 +70,11 @@ public class UserServiceImpl implements UserService {
         Integer type = userLoginRepVO.getType();
 
         LoginTypeEnum loginTypeEnum = LoginTypeEnum.valueOf(type);
+
+        // 登录类型错误
+        if (Objects.isNull(loginTypeEnum)) {
+            throw new BizException(ResponseCodeEnum.LOGIN_TYPE_ERROR);
+        }
 
         Long userId = null;
 
@@ -103,7 +112,27 @@ public class UserServiceImpl implements UserService {
                 break;
             case PASSWORD:
                 // 密码登录
-                // TODO
+                String password = userLoginRepVO.getPassword();
+                // 根据手机号查询
+                UserDO userDO1 = userDOMapper.selectByPhone(phone);
+
+                // 判断该手机号是否注册
+                if (Objects.isNull(userDO1)) {
+                    throw new BizException(ResponseCodeEnum.USER_NOT_FOUND);
+                }
+
+                // 拿到密文密码
+                String encodedPassword = userDO1.getPassword();
+
+                // 匹配密码是否一致
+                boolean isPasswordCorrect = passwordEncoder.matches(password, encodedPassword);
+
+                // 如果不正确，则抛出业务异常，提示用户名或密码不正确
+                if (!isPasswordCorrect) {
+                    throw new BizException(ResponseCodeEnum.PHONE_OR_PASSWORD_ERROR);
+                }
+
+                userId = userDO1.getId();
                 break;
             default:
                 break;
@@ -192,6 +221,33 @@ public class UserServiceImpl implements UserService {
 
         // 退出登录 (指定用户 ID)
         StpUtil.logout(userId);
+
+        return Response.success();
+    }
+
+    /**
+     * 修改面膜
+     * @param updatePasswordReqVO
+     * @return
+     */
+    @Override
+    public Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO) {
+        // 新密码
+        String newPassword = updatePasswordReqVO.getNewPassword();
+        // 加密后的密码
+        String encodePassword = passwordEncoder.encode(newPassword);
+
+        // 获取当前请求对应的用户ID
+        Long userId = LoginUserContextHolder.getUserId();
+
+        UserDO userDO = UserDO.builder()
+                .id(userId)
+                .password(encodePassword)
+                .updateTime(LocalDateTime.now())
+                .build();
+
+        // 更新密码
+        userDOMapper.updateByPrimaryKeySelective(userDO);
 
         return Response.success();
     }

@@ -1,5 +1,6 @@
 package com.jacob.micro.auth.service;
 
+import com.jacob.micro.auth.model.vo.user.UpdatePasswordReqVO;
 import com.jacob.micro.auth.model.vo.user.UserLoginRepVO;
 import com.jacob.micro.framework.common.response.Response;
 
@@ -24,4 +25,11 @@ public interface UserService {
      * @return
      */
     Response<?> logout();
+
+    /**
+     * 修改面膜
+     * @param updatePasswordReqVO
+     * @return
+     */
+    Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO);
 }
