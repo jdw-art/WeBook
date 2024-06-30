@@ -1,5 +1,6 @@
 package com.jacob.micro.auth.controller;
 
+import com.jacob.micro.auth.model.vo.user.UpdatePasswordReqVO;
 import com.jacob.micro.auth.model.vo.user.UserLoginRepVO;
 import com.jacob.micro.auth.service.UserService;
 import com.jacob.micro.framework.biz.operationlog.aspect.ApiOperationLog;
@@ -34,5 +35,11 @@ public class UserController {
     public Response<?> logout() {
 
         return userService.logout();
+    }
+
+    @PostMapping("/password/update")
+    @ApiOperationLog(description = "修改密码")
+    public Response<?> updatePassword(@RequestBody @Validated UpdatePasswordReqVO updatePasswordReqVO) {
+        return userService.updatePassword(updatePasswordReqVO);
     }
 }
