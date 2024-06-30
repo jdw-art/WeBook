@@ -1,4 +1,4 @@
-package com.jacob.micro.auth.filter;
+package com.jacob.micro.framework.biz.context.holder;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.jacob.micro.framework.common.constant.GlobalConstants;
@@ -9,8 +9,8 @@ import java.util.Objects;
 
 /**
  * @Author: Jacob
- * @Description: 设置和获取上下文数据
- * @Date: 2024/6/26 20:14
+ * @Description: 登录用户上下文
+ * @Date: 2024/6/30 15:54
  * @Version: 1.0
  */
 public class LoginUserContextHolder {
@@ -21,6 +21,7 @@ public class LoginUserContextHolder {
 
     /**
      * 设置用户 ID
+     *
      * @param value
      */
     public static void setUserId(Object value) {
@@ -29,6 +30,7 @@ public class LoginUserContextHolder {
 
     /**
      * 获取用户 ID
+     *
      * @return
      */
     public static Long getUserId() {
@@ -40,7 +42,7 @@ public class LoginUserContextHolder {
     }
 
     /**
-     * 删除ThreadLocal
+     * 删除 ThreadLocal
      */
     public static void remove() {
         LOGIN_USER_CONTEXT_THREAD_LOCAL.remove();
