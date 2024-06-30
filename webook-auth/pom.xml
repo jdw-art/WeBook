@@ -40,6 +40,13 @@
             <version>${revision}</version>
         </dependency>
 
+        <!--上下文组件-->
+        <dependency>
+            <groupId>com.jacob.micro</groupId>
+            <artifactId>webook-spring-bot-starter-biz-context</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
         <!-- Jackson 组件 -->
         <dependency>
             <groupId>com.jacob.micro</groupId>
