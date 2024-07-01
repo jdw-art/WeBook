@@ -19,6 +19,7 @@
     <module>webook-auth</module>
     <module>webook-framework</module>
     <module>webook-gateway</module>
+      <module>webook-oss</module>
   </modules>
 
   <properties>
