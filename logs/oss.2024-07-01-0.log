@@ -1,0 +1,11 @@
+2024-07-01 21:46:05.859 [main] INFO  com.jacob.micro.oss.biz.WeBookOssBizApplication - Starting WeBookOssBizApplication using Java 17.0.11 with PID 35456 (E:\IDEAWorkplace\webook\webook\webook-oss\webook-oss-biz\target\classes started by 姜文武 in E:\IDEAWorkplace\webook\webook)
+2024-07-01 21:46:05.862 [main] INFO  com.jacob.micro.oss.biz.WeBookOssBizApplication - The following 1 profile is active: "dev"
+2024-07-01 21:46:06.486 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-07-01 21:46:06.487 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-07-01 21:46:06.498 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-07-01 21:46:06.505 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-01 21:46:06.506 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-07-01 21:46:06.562 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-07-01 21:46:06.562 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 662 ms
+2024-07-01 21:46:06.802 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2024-07-01 21:46:06.806 [main] INFO  com.jacob.micro.oss.biz.WeBookOssBizApplication - Started WeBookOssBizApplication in 1.397 seconds (process running for 1.912)
