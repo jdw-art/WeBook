@@ -21,13 +21,14 @@ import java.util.UUID;
 public class MinioFileStrategy implements FileStrategy {
 
     @Resource
-    private MinioClient minioClient;
-    @Resource
     private MinioProperties minioProperties;
+
+    @Resource
+    private MinioClient minioClient;
 
     @Override
     @SneakyThrows
-    public String uploadFile(MultipartFile file, String bucketName) {
+    public String uploadFile(MultipartFile file) {
         log.info("## 上传文件至 Minio ...");
 
         // 判断文件是否为空
@@ -53,14 +54,14 @@ public class MinioFileStrategy implements FileStrategy {
 
         // 上传文件至 Minio
         minioClient.putObject(PutObjectArgs.builder()
-                .bucket(bucketName)
+                .bucket(minioProperties.getBucketName())
                 .object(objectName)
                 .stream(file.getInputStream(), file.getSize(), -1)
                 .contentType(contentType)
                 .build());
 
         // 返回文件的访问链接
-        String url = String.format("%s/%s/%s", minioProperties.getEndpoint(), bucketName, objectName);
+        String url = String.format("%s/%s/%s", minioProperties.getEndpoint(), minioProperties.getBucketName(), objectName);
         log.info("==> 上传文件至 Minio 成功，访问路径: {}", url);
         return url;
     }
