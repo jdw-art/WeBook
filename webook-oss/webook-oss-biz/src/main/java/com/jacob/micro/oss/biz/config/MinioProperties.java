@@ -10,11 +10,12 @@ import org.springframework.stereotype.Component;
  * @Date: 2024/7/2 21:15
  * @Version: 1.0
  */
-@ConfigurationProperties(prefix = "minio")
+@ConfigurationProperties(prefix = "storage.minio")
 @Component
 @Data
 public class MinioProperties {
     private String endpoint;
     private String accessKey;
     private String secretKey;
+    private String bucketName;
 }
