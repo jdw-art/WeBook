@@ -40,5 +40,5 @@ spring:
             multi-statement-allow: true
 
 aliyun: # 接入阿里云（发送短信使用）
-  accessKeyId: LTAI5tQB52FaY5xQTR7vZEPd # 填写你自己的
-  accessKeySecret: 5H5GEcvGALFKOctnUrd6l3G5937zMf # 填写你自己的
+  accessKeyId:  # 填写你自己的
+  accessKeySecret:  # 填写你自己的
