@@ -21,12 +21,10 @@ public class FileServiceImpl implements FileService {
     @Resource
     private FileStrategy fileStrategy;
 
-    private static final String BUCKET_NAME = "webook";
-
     @Override
     public Response<?> uploadFile(MultipartFile file) {
         // 上传文件到
-        String url = fileStrategy.uploadFile(file, BUCKET_NAME);
+        String url = fileStrategy.uploadFile(file);
 
         return Response.success(url);
     }
