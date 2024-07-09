@@ -20,6 +20,7 @@
     <module>webook-framework</module>
     <module>webook-gateway</module>
       <module>webook-oss</module>
+      <module>webook-user</module>
   </modules>
 
   <properties>
