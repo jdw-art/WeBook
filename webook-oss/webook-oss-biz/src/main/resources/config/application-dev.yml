@@ -10,6 +10,6 @@ storage:
     bucketName: webook #存储桶名称
   aliyun-oss:
     endpoint: oss-cn-hangzhou.aliyuncs.com # 改成你自己的
-    accessKey: LTAI5tQB52FaY5xQTR7vZEPd # 改成你自己的
-    secretKey: 5H5GEcvGALFKOctnUrd6l3G5937zMf # 改成你自己的
+    accessKey:  # 改成你自己的
+    secretKey:  # 改成你自己的
     bucketName: webook-aliyun #存储桶名称
