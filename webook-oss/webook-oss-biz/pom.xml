@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.jacob.micro</groupId>
         <artifactId>webook-oss</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <!-- 打包方式 -->
