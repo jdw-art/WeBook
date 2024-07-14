@@ -10,8 +10,8 @@
     <!-- 多模块项目需要配置打包方式为 pom -->
     <packaging>pom</packaging>
     <modules>
-        <module>webook-oss-api</module>
         <module>webook-oss-biz</module>
+        <module>webook-oss-api</module>
     </modules>
 
     <artifactId>webook-oss</artifactId>
