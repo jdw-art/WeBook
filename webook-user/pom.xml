@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>webook-user-api</module>
         <module>webook-user-biz</module>
+        <module>webook-user-api</module>
     </modules>
 
     <artifactId>webook-user</artifactId>

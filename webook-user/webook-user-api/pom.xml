@@ -6,7 +6,6 @@
         <artifactId>webook-user</artifactId>
         <version>${revision}</version>
     </parent>
-
     <!-- 打包方式 -->
     <packaging>jar</packaging>
 
@@ -19,6 +18,18 @@
         <dependency>
             <groupId>com.jacob.micro</groupId>
             <artifactId>webook-common</artifactId>
+        </dependency>
+
+        <!-- OpenFeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- 负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
     </dependencies>
 </project>
