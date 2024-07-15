@@ -99,6 +99,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.jacob.micro</groupId>
+            <artifactId>webook-spring-bot-starter-biz-context</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
     <build>

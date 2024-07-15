@@ -17,6 +17,7 @@
         <dependency>
             <groupId>com.jacob.micro</groupId>
             <artifactId>webook-common</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <!-- Spring 核心 -->
@@ -38,6 +39,11 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>transmittable-thread-local</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-core</artifactId>
         </dependency>
     </dependencies>
 </project>
