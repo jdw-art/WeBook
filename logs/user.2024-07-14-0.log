@@ -139,3 +139,17 @@
 2024-07-14 17:10:02.401 [http-nio-8082-exec-1] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - ==> Parameters: webook_id(String), 鲨鱼辣椒(String), https://webook-aliyun.oss-cn-hangzhou.aliyuncs.com/aad34b8fcb144f00aaa0431ed54c0945.jpg(String), 2000-09-12(LocalDate), 1(Integer), This is an introduction(String), 2024-07-14T17:10:02.155973500(LocalDateTime), 12(Long)
 2024-07-14 17:10:02.418 [http-nio-8082-exec-1] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - <==    Updates: 1
 2024-07-14 17:10:02.438 [http-nio-8082-exec-1] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ===== 删除 ThreadLocal， userId: 12
+2024-07-14 17:23:12.928 [http-nio-8082-exec-3] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ## HeaderUserId2ContextFilter，用户 ID：12
+2024-07-14 17:23:12.929 [http-nio-8082-exec-3] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ===== 设置 userId 到 ThreadLocal 中， 用户 ID: 12
+2024-07-14 17:23:13.919 [http-nio-8082-exec-3] INFO  c.j.micro.user.biz.service.impl.UserServiceImpl - ==> 调用 oss 服务成功，上传头像，url：http://110.41.141.141:9000/webook/1f45936886204dbbaa412bce5935f10a.jpg
+2024-07-14 17:23:13.921 [http-nio-8082-exec-3] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - ==>  Preparing: update t_user SET xiaohashu_id = ?, nickname = ?, avatar = ?, birthday = ?, sex = ?, introduction = ?, update_time = ? where id = ?
+2024-07-14 17:23:13.922 [http-nio-8082-exec-3] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - ==> Parameters: webook_id(String), 鲨鱼辣椒(String), http://110.41.141.141:9000/webook/1f45936886204dbbaa412bce5935f10a.jpg(String), 2000-09-12(LocalDate), 1(Integer), This is an introduction(String), 2024-07-14T17:23:13.919457200(LocalDateTime), 12(Long)
+2024-07-14 17:23:13.927 [http-nio-8082-exec-3] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - <==    Updates: 1
+2024-07-14 17:23:13.930 [http-nio-8082-exec-3] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ===== 删除 ThreadLocal， userId: 12
+2024-07-14 17:24:00.645 [http-nio-8082-exec-4] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ## HeaderUserId2ContextFilter，用户 ID：12
+2024-07-14 17:24:00.646 [http-nio-8082-exec-4] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ===== 设置 userId 到 ThreadLocal 中， 用户 ID: 12
+2024-07-14 17:24:00.806 [http-nio-8082-exec-4] INFO  c.j.micro.user.biz.service.impl.UserServiceImpl - ==> 调用 oss 服务成功，上传头像，url：https://webook-aliyun.oss-cn-hangzhou.aliyuncs.com/12b6025bb66648ddb15f01059f2c2a56.jpg
+2024-07-14 17:24:00.807 [http-nio-8082-exec-4] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - ==>  Preparing: update t_user SET xiaohashu_id = ?, nickname = ?, avatar = ?, birthday = ?, sex = ?, introduction = ?, update_time = ? where id = ?
+2024-07-14 17:24:00.808 [http-nio-8082-exec-4] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - ==> Parameters: webook_id(String), 鲨鱼辣椒(String), https://webook-aliyun.oss-cn-hangzhou.aliyuncs.com/12b6025bb66648ddb15f01059f2c2a56.jpg(String), 2000-09-12(LocalDate), 1(Integer), This is an introduction(String), 2024-07-14T17:24:00.807006700(LocalDateTime), 12(Long)
+2024-07-14 17:24:00.814 [http-nio-8082-exec-4] DEBUG c.j.m.u.b.d.m.U.updateByPrimaryKeySelective - <==    Updates: 1
+2024-07-14 17:24:00.818 [http-nio-8082-exec-4] INFO  c.j.m.f.b.c.filter.HeaderUserId2ContextFilter - ===== 删除 ThreadLocal， userId: 12
