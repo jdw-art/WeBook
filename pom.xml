@@ -21,6 +21,7 @@
     <module>webook-gateway</module>
       <module>webook-oss</module>
       <module>webook-user</module>
+      <module>webook-distributed-id-generator</module>
   </modules>
 
   <properties>
@@ -246,6 +247,12 @@
         <groupId>io.github.openfeign.form</groupId>
         <artifactId>feign-form</artifactId>
         <version>${feign-form.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.jacob.micro</groupId>
+        <artifactId>webook-distributed-id-generator-api</artifactId>
+        <version>${revision}</version>
       </dependency>
 
     </dependencies>

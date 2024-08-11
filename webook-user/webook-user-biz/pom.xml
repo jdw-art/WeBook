@@ -86,6 +86,12 @@
             <version>${revision}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.jacob.micro</groupId>
+            <artifactId>webook-distributed-id-generator-api</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
