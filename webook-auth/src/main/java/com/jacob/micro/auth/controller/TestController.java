@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @NacosValue(value = "${rate-limit.api.limit}", autoRefreshed = true)
+    // @Value(value = "${rate-limit.api.limit}")
     private Integer limit;
 
     @Resource

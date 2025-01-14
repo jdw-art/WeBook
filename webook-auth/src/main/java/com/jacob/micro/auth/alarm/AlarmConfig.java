@@ -1,5 +1,6 @@
 package com.jacob.micro.auth.alarm;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.jacob.micro.auth.alarm.impl.MailAlarmHelper;
 import com.jacob.micro.auth.alarm.impl.SmsAlarmHelper;
 import org.apache.commons.lang3.StringUtils;

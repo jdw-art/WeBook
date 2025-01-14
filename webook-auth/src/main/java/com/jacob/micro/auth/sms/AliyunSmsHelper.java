@@ -1,5 +1,6 @@
 package com.jacob.micro.auth.sms;
 
+import com.alibaba.druid.filter.config.ConfigTools;
 import com.aliyun.dysmsapi20170525.Client;
 import com.aliyun.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.dysmsapi20170525.models.SendSmsResponse;
@@ -8,6 +9,9 @@ import com.jacob.micro.framework.common.util.JsonUtils;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 
 /**
  * @Author: Jacob
@@ -50,5 +54,26 @@ public class AliyunSmsHelper {
             log.error("==> 短信发送错误：", error);
             return false;
         }
+    }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchProviderException {
+        // 你的密码
+        String password = "root";
+        String[] arr = ConfigTools.genKeyPair(512);
+
+        // 私钥
+        log.info("privateKey: {}", arr[0]);
+        // 公钥
+        log.info("publicKey: {}", arr[1]);
+
+        String encodePassword = null;
+
+        // 通过私钥加密密码
+        try {
+            encodePassword = ConfigTools.encrypt(arr[0], password);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("password: {}", encodePassword);
     }
 }

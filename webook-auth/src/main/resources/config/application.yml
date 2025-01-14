@@ -51,7 +51,7 @@ rate-limit:
     limit: 100 # 接口限流阈值
 
 alarm:
-  type: sms # 告警类型
+  type: mail # 告警类型
 
 #nacos:
 #  config: # Nacos 配置中心
