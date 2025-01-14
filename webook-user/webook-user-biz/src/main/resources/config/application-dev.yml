@@ -4,7 +4,7 @@ spring:
     # 数据库连接信息
     url: jdbc:mysql://127.0.0.1:3306/webook?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
     username: root # 数据库用户名
-    password: bDNDCQaLW8+DvkRK66v75O86pd58wsyL8uD06/muMv3Si+2gWJJb0ZUkrZ90vQJQWNPfIAgfWEtHjFNeQFmcRw== # 数据库密码 jdw112233
+    password: RdNQllqrKmsUWxsz/uKcxUo8vJ96mXaMdDQOdbtX2AYaETRF0AH23n9q2AkZk/UDMoEv/CCgvQRaoflHEjFD+Q== # 数据库密码 jdw112233
     type: com.alibaba.druid.pool.DruidDataSource
     druid: # Druid 连接池
       initial-size: 5 # 初始化连接池大小
@@ -16,7 +16,7 @@ spring:
       min-evictable-idle-time-millis: 300000 # 配置一个连接在连接池中最小生存的时间（单位：毫秒）
       max-evictable-idle-time-millis: 900000 # 配置一个连接在连接池中最大生存的时间（单位：毫秒）
       validation-query: SELECT 1 FROM DUAL # 配置测试连接是否可用的查询 sql
-      connectionProperties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKd2u0t2SBt2ejir55PRAf+RKLtSzEexG3O7KBUy3NVqVid5jhK0vpIcLllrUdxERE6hfN8YpLiatoSNnaLseuECAwEAAQ==
+      connectionProperties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANt8R2Er1Ev4ZsJMB2/sWtn49I9uDXcu5OIxJn8RxUW11uJp/Ffw9hyBoSrOvSekhj1+e1jNFfV5ro2xk466flcCAwEAAQ==
       test-on-borrow: false
       test-on-return: false
       pool-prepared-statements: false

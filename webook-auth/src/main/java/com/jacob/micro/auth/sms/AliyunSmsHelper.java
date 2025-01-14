@@ -58,7 +58,7 @@ public class AliyunSmsHelper {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, NoSuchProviderException {
         // 你的密码
-        String password = "root";
+        String password = "jdw112233";
         String[] arr = ConfigTools.genKeyPair(512);
 
         // 私钥

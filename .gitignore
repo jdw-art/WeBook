@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### api密钥 & 密码配置 ###
+webook-auth/*/application-dev.yml
+webook-user/*/application-dev.yml
+webook-oss/*/application-dev.yml
