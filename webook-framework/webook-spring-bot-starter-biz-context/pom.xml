@@ -17,6 +17,7 @@
         <dependency>
             <groupId>com.jacob.micro</groupId>
             <artifactId>webook-common</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <!-- Spring 核心 -->

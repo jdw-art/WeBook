@@ -1,1 +1,2 @@
 com.jacob.micro.framework.biz.context.config.ContextAutoConfiguration
+com.jacob.micro.framework.biz.context.config.FeignContextAutoConfiguration

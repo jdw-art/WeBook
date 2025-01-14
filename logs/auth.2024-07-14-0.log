@@ -662,3 +662,27 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: Client not connected,
 2024-07-14 16:54:36.830 [http-nio-8080-exec-1] DEBUG c.j.m.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 13362179496(String)
 2024-07-14 16:54:36.833 [http-nio-8080-exec-1] DEBUG c.j.m.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
 2024-07-14 16:54:37.010 [http-nio-8080-exec-1] INFO  c.j.m.f.b.o.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录或注册], 耗时: 186ms, 出参: {"success":true,"message":null,"errorCode":null,"data":"L5BWiMTpI1CR2g1l1tWM3Ko59GxmopE3UYFec8xZ1dXMkObQFI1cqMvQPHJsrxcyTUWJYqqo8J6aIpDcPMLlyzDBbppG1wm6qqFc1P0mE3Rw4G7zWBZLWWl9yF38FMTD"} =================================== 
+2024-07-14 21:49:20.460 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler - null Unexpected exception during request: java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-07-14 21:49:20.673 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /127.0.0.1:6379
+2024-07-14 21:49:20.739 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-07-14 21:49:29.756 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-07-14 21:49:29.758 [lettuce-nioEventLoop-4-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-07-14 21:49:37.955 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-07-14 21:49:37.957 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-07-14 21:49:54.357 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-07-14 21:49:54.365 [lettuce-nioEventLoop-4-8] INFO  io.lettuce.core.protocol.ReconnectionHandler - Reconnected to 127.0.0.1/<unresolved>:6379
