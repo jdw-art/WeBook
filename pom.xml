@@ -22,6 +22,7 @@
       <module>webook-oss</module>
       <module>webook-user</module>
       <module>webook-distributed-id-generator</module>
+      <module>webook-kv</module>
   </modules>
 
   <properties>
@@ -252,6 +253,12 @@
       <dependency>
         <groupId>com.jacob.micro</groupId>
         <artifactId>webook-distributed-id-generator-api</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.jacob.micro</groupId>
+        <artifactId>webook-kv-api</artifactId>
         <version>${revision}</version>
       </dependency>
 
