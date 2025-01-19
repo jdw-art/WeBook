@@ -4,6 +4,7 @@ import com.jacob.micro.framework.common.response.Response;
 import com.jacob.micro.note.biz.model.vo.FindNoteDetailReqVO;
 import com.jacob.micro.note.biz.model.vo.FindNoteDetailRspVO;
 import com.jacob.micro.note.biz.model.vo.PublishNoteReqVO;
+import com.jacob.micro.note.biz.model.vo.UpdateNoteReqVO;
 
 /**
  * @Author: Jacob
@@ -26,4 +27,11 @@ public interface NoteService {
      * @return
      */
     Response<FindNoteDetailRspVO> findNoteDetail(FindNoteDetailReqVO findNoteDetailReqVO);
+
+    /**
+     * 笔记更新
+     * @param updateNoteReqVO
+     * @return
+     */
+    Response<?> updateNote(UpdateNoteReqVO updateNoteReqVO);
 }
