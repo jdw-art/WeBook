@@ -23,6 +23,7 @@
       <module>webook-user</module>
       <module>webook-distributed-id-generator</module>
       <module>webook-kv</module>
+      <module>webook-note</module>
   </modules>
 
   <properties>
