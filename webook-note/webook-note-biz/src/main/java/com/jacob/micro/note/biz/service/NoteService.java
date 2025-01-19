@@ -1,6 +1,8 @@
 package com.jacob.micro.note.biz.service;
 
 import com.jacob.micro.framework.common.response.Response;
+import com.jacob.micro.note.biz.model.vo.FindNoteDetailReqVO;
+import com.jacob.micro.note.biz.model.vo.FindNoteDetailRspVO;
 import com.jacob.micro.note.biz.model.vo.PublishNoteReqVO;
 
 /**
@@ -17,4 +19,11 @@ public interface NoteService {
      * @return
      */
     Response<?> publishNote(PublishNoteReqVO publishNoteReqVO);
+
+    /**
+     * 笔记详情
+     * @param findNoteDetailReqVO
+     * @return
+     */
+    Response<FindNoteDetailRspVO> findNoteDetail(FindNoteDetailReqVO findNoteDetailReqVO);
 }

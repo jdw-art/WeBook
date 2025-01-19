@@ -105,6 +105,12 @@
             <artifactId>webook-kv-api</artifactId>
             <version>${revision}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.jacob.micro</groupId>
+            <artifactId>webook-user-biz</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
     <build>
