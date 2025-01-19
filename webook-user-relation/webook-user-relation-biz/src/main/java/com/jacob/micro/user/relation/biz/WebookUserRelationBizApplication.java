@@ -3,6 +3,7 @@ package com.jacob.micro.user.relation.biz;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @Author: Jacob
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.jacob.micro.user.relation.biz.domain.mapper")
+@EnableFeignClients(basePackages = "com.jacob.micro")
 public class WebookUserRelationBizApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebookUserRelationBizApplication.class, args);
