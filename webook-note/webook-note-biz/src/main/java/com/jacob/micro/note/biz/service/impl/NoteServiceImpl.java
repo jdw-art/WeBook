@@ -20,10 +20,7 @@ import com.jacob.micro.note.biz.enums.NoteStatusEnum;
 import com.jacob.micro.note.biz.enums.NoteTypeEnum;
 import com.jacob.micro.note.biz.enums.NoteVisibleEnum;
 import com.jacob.micro.note.biz.enums.ResponseCodeEnum;
-import com.jacob.micro.note.biz.model.vo.FindNoteDetailReqVO;
-import com.jacob.micro.note.biz.model.vo.FindNoteDetailRspVO;
-import com.jacob.micro.note.biz.model.vo.PublishNoteReqVO;
-import com.jacob.micro.note.biz.model.vo.UpdateNoteReqVO;
+import com.jacob.micro.note.biz.model.vo.*;
 import com.jacob.micro.note.biz.rpc.DistributedIdGeneratorRpcService;
 import com.jacob.micro.note.biz.rpc.KeyValueRpcService;
 import com.jacob.micro.note.biz.rpc.UserRpcService;
@@ -449,5 +446,34 @@ public class NoteServiceImpl implements NoteService {
     @Override
     public void deleteNoteLocalCache(Long noteId) {
         LOCAL_CACHE.invalidate(noteId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Response<?> deleteNote(DeleteNoteReqVO deleteNoteReqVO) {
+        // 笔记 ID
+        Long noteId = deleteNoteReqVO.getId();
+
+        // 逻辑删除
+        NoteDO noteDO = NoteDO.builder()
+                .id(noteId)
+                .status(NoteStatusEnum.DELETED.getCode())
+                .updateTime(LocalDateTime.now())
+                .build();
+        int count = noteDOMapper.deleteByPrimaryKey(noteId);
+
+        // 若影响的行数为0，表示该笔记不存在
+        if(count == 0) {
+            throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
+        }
+
+        // 删除缓存
+        String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
+        redisTemplate.delete(noteDetailRedisKey);
+
+        // 同步发送广播模式 MQ，将所有示例中的本地缓存都删除掉
+        rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
+        log.info("===> MQ：删除笔记本地缓存发送成功");
+        return Response.success();
     }
 }

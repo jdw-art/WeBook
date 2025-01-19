@@ -1,10 +1,7 @@
 package com.jacob.micro.note.biz.service;
 
 import com.jacob.micro.framework.common.response.Response;
-import com.jacob.micro.note.biz.model.vo.FindNoteDetailReqVO;
-import com.jacob.micro.note.biz.model.vo.FindNoteDetailRspVO;
-import com.jacob.micro.note.biz.model.vo.PublishNoteReqVO;
-import com.jacob.micro.note.biz.model.vo.UpdateNoteReqVO;
+import com.jacob.micro.note.biz.model.vo.*;
 
 /**
  * @Author: Jacob
@@ -40,4 +37,11 @@ public interface NoteService {
      * @param noteId
      */
     void deleteNoteLocalCache(Long noteId);
+
+    /**
+     * 删除笔记
+     * @param deleteNoteReqVO
+     * @return
+     */
+    Response<?> deleteNote(DeleteNoteReqVO deleteNoteReqVO);
 }
