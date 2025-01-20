@@ -1,6 +1,7 @@
 package com.jacob.micro.count.biz.domain.mapper;
 
 import com.jacob.micro.count.biz.domain.dataobject.NoteCountDO;
+import org.apache.ibatis.annotations.Param;
 
 public interface NoteCountDOMapper {
     int deleteByPrimaryKey(Long id);
