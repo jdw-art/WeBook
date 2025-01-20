@@ -58,6 +58,12 @@ public class RelationServiceImpl implements RelationService {
     @Resource
     private RocketMQTemplate rocketMQTemplate;
 
+    /**
+     * 关注用户
+     *
+     * @param followUserReqVO
+     * @return
+     */
     @Override
     public Response<?> follow(FollowUserReqVO followUserReqVO) {
         // 关注的用户 ID
