@@ -3,10 +3,7 @@ package com.jacob.micro.user.relation.biz.controller;
 import com.jacob.micro.framework.biz.operationlog.aspect.ApiOperationLog;
 import com.jacob.micro.framework.common.response.PageResponse;
 import com.jacob.micro.framework.common.response.Response;
-import com.jacob.micro.user.relation.biz.model.vo.FindFollowingListReqVO;
-import com.jacob.micro.user.relation.biz.model.vo.FindFollowingUserRspVO;
-import com.jacob.micro.user.relation.biz.model.vo.FollowUserReqVO;
-import com.jacob.micro.user.relation.biz.model.vo.UnfollowUserReqVO;
+import com.jacob.micro.user.relation.biz.model.vo.*;
 import com.jacob.micro.user.relation.biz.service.RelationService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -46,5 +43,11 @@ public class RelationController {
     @ApiOperationLog(description = "查询用户关注列表")
     public PageResponse<FindFollowingUserRspVO> findFollowingList(@Validated @RequestBody FindFollowingListReqVO findFollowingListReqVO) {
         return relationService.findFollowingList(findFollowingListReqVO);
+    }
+
+    @PostMapping("/fans/list")
+    @ApiOperationLog(description = "查询用户粉丝列表")
+    public PageResponse<FindFansUserRspVO> findFansList(@Validated @RequestBody FindFansListReqVO findFansListReqVO) {
+        return relationService.findFansList(findFansListReqVO);
     }
 }

@@ -2,10 +2,7 @@ package com.jacob.micro.user.relation.biz.service;
 
 import com.jacob.micro.framework.common.response.PageResponse;
 import com.jacob.micro.framework.common.response.Response;
-import com.jacob.micro.user.relation.biz.model.vo.FindFollowingListReqVO;
-import com.jacob.micro.user.relation.biz.model.vo.FindFollowingUserRspVO;
-import com.jacob.micro.user.relation.biz.model.vo.FollowUserReqVO;
-import com.jacob.micro.user.relation.biz.model.vo.UnfollowUserReqVO;
+import com.jacob.micro.user.relation.biz.model.vo.*;
 
 /**
  * @Author: Jacob
@@ -35,4 +32,11 @@ public interface RelationService {
      * @return
      */
     PageResponse<FindFollowingUserRspVO> findFollowingList(FindFollowingListReqVO findFollowingListReqVO);
+
+    /**
+     * 查询关注列表
+     * @param findFansListReqVO
+     * @return
+     */
+    PageResponse<FindFansUserRspVO> findFansList(FindFansListReqVO findFansListReqVO);
 }
