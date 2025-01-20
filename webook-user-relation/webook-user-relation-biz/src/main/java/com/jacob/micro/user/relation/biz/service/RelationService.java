@@ -2,6 +2,7 @@ package com.jacob.micro.user.relation.biz.service;
 
 import com.jacob.micro.framework.common.response.Response;
 import com.jacob.micro.user.relation.biz.model.vo.FollowUserReqVO;
+import com.jacob.micro.user.relation.biz.model.vo.UnfollowUserReqVO;
 
 /**
  * @Author: Jacob
@@ -17,4 +18,11 @@ public interface RelationService {
      * @return
      */
     Response<?> follow(FollowUserReqVO followUserReqVO);
+
+    /**
+     * 取关用户
+     * @param unfollowUserReqVO
+     * @return
+     */
+    Response<?> unfollow(UnfollowUserReqVO unfollowUserReqVO);
 }
