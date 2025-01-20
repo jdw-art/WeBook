@@ -3,7 +3,10 @@ package com.jacob.micro.user.biz.service;
 import com.jacob.micro.framework.common.response.Response;
 import com.jacob.micro.user.biz.model.vo.UpdateUserInfoReqVO;
 import com.jacob.micro.user.dto.req.FindUserByIdReqDTO;
+import com.jacob.micro.user.dto.req.FindUsersByIdsReqDTO;
 import com.jacob.micro.user.dto.rsp.FindUserByIdRspDTO;
+
+import java.util.List;
 
 /**
  * @Author: Jacob
@@ -26,4 +29,12 @@ public interface UserService {
      * @return
      */
     Response<FindUserByIdRspDTO> findByUserId(FindUserByIdReqDTO findUserByIdReqDTO);
+
+    /**
+     * 批量根据用户 ID 查询用户信息
+     *
+     * @param findUsersByIdsReqDTO
+     * @return
+     */
+    Response<List<FindUserByIdRspDTO>> findByIds(FindUsersByIdsReqDTO findUsersByIdsReqDTO);
 }
