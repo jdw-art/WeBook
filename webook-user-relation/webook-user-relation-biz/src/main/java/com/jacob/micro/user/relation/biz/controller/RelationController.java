@@ -1,7 +1,10 @@
 package com.jacob.micro.user.relation.biz.controller;
 
 import com.jacob.micro.framework.biz.operationlog.aspect.ApiOperationLog;
+import com.jacob.micro.framework.common.response.PageResponse;
 import com.jacob.micro.framework.common.response.Response;
+import com.jacob.micro.user.relation.biz.model.vo.FindFollowingListReqVO;
+import com.jacob.micro.user.relation.biz.model.vo.FindFollowingUserRspVO;
 import com.jacob.micro.user.relation.biz.model.vo.FollowUserReqVO;
 import com.jacob.micro.user.relation.biz.model.vo.UnfollowUserReqVO;
 import com.jacob.micro.user.relation.biz.service.RelationService;
@@ -37,5 +40,11 @@ public class RelationController {
     @ApiOperationLog(description = "取关用户")
     public Response<?> unfollow(@Validated @RequestBody UnfollowUserReqVO unfollowUserReqVO) {
         return relationService.unfollow(unfollowUserReqVO);
+    }
+
+    @PostMapping("/following/list")
+    @ApiOperationLog(description = "查询用户关注列表")
+    public PageResponse<FindFollowingUserRspVO> findFollowingList(@Validated @RequestBody FindFollowingListReqVO findFollowingListReqVO) {
+        return relationService.findFollowingList(findFollowingListReqVO);
     }
 }

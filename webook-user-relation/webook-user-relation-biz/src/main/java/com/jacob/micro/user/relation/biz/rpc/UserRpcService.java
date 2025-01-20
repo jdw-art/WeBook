@@ -3,10 +3,12 @@ package com.jacob.micro.user.relation.biz.rpc;
 import com.jacob.micro.framework.common.response.Response;
 import com.jacob.micro.user.api.UserFeignApi;
 import com.jacob.micro.user.dto.req.FindUserByIdReqDTO;
+import com.jacob.micro.user.dto.req.FindUsersByIdsReqDTO;
 import com.jacob.micro.user.dto.rsp.FindUserByIdRspDTO;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -36,6 +38,23 @@ public class UserRpcService {
             return null;
         }
 
+        return response.getData();
+    }
+
+    /**
+     * 批量查询用户信息 RPC 接口
+     * @param userIds
+     * @return
+     */
+    public List<FindUserByIdRspDTO> findByIds(List<Long> userIds) {
+        FindUsersByIdsReqDTO findUsersByIdsReqDTO = new FindUsersByIdsReqDTO();
+        findUsersByIdsReqDTO.setIds(userIds);
+
+        Response<List<FindUserByIdRspDTO>> response = userFeignApi.findByIds(findUsersByIdsReqDTO);
+
+        if (!response.isSuccess() || Objects.isNull(response.getData())) {
+            return null;
+        }
         return response.getData();
     }
 }
