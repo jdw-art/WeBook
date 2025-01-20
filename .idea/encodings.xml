@@ -5,6 +5,12 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/webook-count-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/webook-count-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/webook-count-biz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webook-count/webook-count-biz/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-distributed-id-generator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-distributed-id-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webook-distributed-id-generator/webook-distributed-id-generator-api/src/main/java" charset="UTF-8" />
