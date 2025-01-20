@@ -14,6 +14,7 @@ import com.jacob.micro.user.relation.biz.model.dto.UnfollowUserMqDTO;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.spring.annotation.ConsumeMode;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.core.io.ClassPathResource;
@@ -35,7 +36,8 @@ import java.util.Objects;
  */
 @Component
 @RocketMQMessageListener(consumerGroup = "webook_group", // Group 组
-        topic = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW // 消费的主题 Topic
+        topic = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW, // 消费的主题 Topic
+        consumeMode = ConsumeMode.ORDERLY
 )
 @Slf4j
 public class FollowUnfollowConsumer implements RocketMQListener<Message> {
@@ -177,7 +179,7 @@ public class FollowUnfollowConsumer implements RocketMQListener<Message> {
             return false;
         }));
 
-        // TODO: 若数据库删除成功，更新 Redis，将自己从取关的用户的 ZSet 粉丝列表中移除
+        // 若数据库删除成功，更新 Redis，将自己从取关的用户的 ZSet 粉丝列表中移除
         if (isSuccess) {
             // 被取关用户的粉丝列表 Redis Key
             String fansRedisKey = RedisKeyConstants.buildUserFansKey(unfollowUserId);
