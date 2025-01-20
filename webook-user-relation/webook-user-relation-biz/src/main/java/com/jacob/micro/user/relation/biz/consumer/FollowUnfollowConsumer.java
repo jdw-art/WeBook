@@ -35,9 +35,9 @@ import java.util.Objects;
  * @Version: 1.0
  */
 @Component
-@RocketMQMessageListener(consumerGroup = "webook_group", // Group 组
+@RocketMQMessageListener(consumerGroup = "webook_group_" + MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW, // Group 组
         topic = MQConstants.TOPIC_FOLLOW_OR_UNFOLLOW, // 消费的主题 Topic
-        consumeMode = ConsumeMode.ORDERLY
+        consumeMode = ConsumeMode.ORDERLY // 设置为顺序消费模式
 )
 @Slf4j
 public class FollowUnfollowConsumer implements RocketMQListener<Message> {
