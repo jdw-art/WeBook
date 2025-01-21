@@ -25,6 +25,7 @@ import com.jacob.micro.note.biz.domain.mapper.TopicDOMapper;
 import com.jacob.micro.note.biz.enums.*;
 import com.jacob.micro.note.biz.model.dto.CollectUnCollectNoteMqDTO;
 import com.jacob.micro.note.biz.model.dto.LikeUnlikeNoteMqDTO;
+import com.jacob.micro.note.biz.model.dto.NoteOperateMqDTO;
 import com.jacob.micro.note.biz.model.vo.*;
 import com.jacob.micro.note.biz.rpc.DistributedIdGeneratorRpcService;
 import com.jacob.micro.note.biz.rpc.KeyValueRpcService;
@@ -200,6 +201,34 @@ public class NoteServiceImpl implements NoteService {
                 keyValueRpcService.deleteNoteContent(contentUuid);
             }
         }
+
+        // 发送 MQ
+        // 构建消息体 DTO
+        NoteOperateMqDTO noteOperateMqDTO = NoteOperateMqDTO.builder()
+                .creatorId(creatorId)
+                .noteId(Long.valueOf(snowflakeId))
+                .type(NoteOperateEnum.PUBLISH.getCode()) // 发布笔记
+                .build();
+
+        // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
+        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(noteOperateMqDTO))
+                .build();
+
+        // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
+        String destination = MQConstants.TOPIC_NOTE_OPERATE + ":" + MQConstants.TAG_NOTE_PUBLISH;
+
+        // 异步发送 MQ 消息，提升接口响应速度
+        rocketMQTemplate.asyncSend(destination, message, new SendCallback() {
+            @Override
+            public void onSuccess(SendResult sendResult) {
+                log.info("==> 【笔记发布】MQ 发送成功，SendResult: {}", sendResult);
+            }
+
+            @Override
+            public void onException(Throwable throwable) {
+                log.error("==> 【笔记发布】MQ 发送异常: ", throwable);
+            }
+        });
         return Response.success();
     }
 
@@ -522,6 +551,35 @@ public class NoteServiceImpl implements NoteService {
         // 同步发送广播模式 MQ，将所有示例中的本地缓存都删除掉
         rocketMQTemplate.syncSend(MQConstants.TOPIC_DELETE_NOTE_LOCAL_CACHE, noteId);
         log.info("===> MQ：删除笔记本地缓存发送成功");
+
+        // 发送 MQ
+        // 构建消息体 DTO
+        NoteOperateMqDTO noteOperateMqDTO = NoteOperateMqDTO.builder()
+                .creatorId(selectNoteDO.getCreatorId())
+                .noteId(noteId)
+                .type(NoteOperateEnum.DELETE.getCode()) // 删除笔记
+                .build();
+
+        // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
+        Message<String> message = MessageBuilder.withPayload(JsonUtils.toJsonString(noteOperateMqDTO))
+                .build();
+
+        // 通过冒号连接, 可让 MQ 发送给主题 Topic 时，携带上标签 Tag
+        String destination = MQConstants.TOPIC_NOTE_OPERATE + ":" + MQConstants.TAG_NOTE_DELETE;
+
+        // 异步发送 MQ 消息，提升接口响应速度
+        rocketMQTemplate.asyncSend(destination, message, new SendCallback() {
+            @Override
+            public void onSuccess(SendResult sendResult) {
+                log.info("==> 【笔记删除】MQ 发送成功，SendResult: {}", sendResult);
+            }
+
+            @Override
+            public void onException(Throwable throwable) {
+                log.error("==> 【笔记删除】MQ 发送异常: ", throwable);
+            }
+        });
+
         return Response.success();
     }
 
@@ -1026,10 +1084,10 @@ public class NoteServiceImpl implements NoteService {
         // 笔记ID
         Long noteId = collectNoteReqVO.getId();
 
-        // 1. 校验被收藏的笔记是否存在
-        checkNoteIsExist(noteId);
+        // 1. 校验被点赞的笔记是否存在，若存在，则获取发布者用户 ID
+        Long creatorId = checkNoteIsExistAndGetCreatorId(noteId);
 
-        // TODO: 2. 判断目标笔记，是否已经收藏过
+        // 2. 判断目标笔记，是否已经收藏过
         // 当前登录用户ID
         Long userId = LoginUserContextHolder.getUserId();
 
@@ -1045,9 +1103,10 @@ public class NoteServiceImpl implements NoteService {
         // 执行 Lua 脚本，拿到返回结果
         Long result = redisTemplate.execute(script, Collections.singletonList(bloomUserNoteCollectListKey), noteId);
 
-        NoteCollectLuaResultEnum noteCollectLuaResultEnum = NoteCollectLuaResultEnum.valueOf(result);
-
+        // 用户收藏列表 ZSet Key
         String userNoteCollectZSetKey = RedisKeyConstants.buildUserNoteCollectZSetKey(userId);
+
+        NoteCollectLuaResultEnum noteCollectLuaResultEnum = NoteCollectLuaResultEnum.valueOf(result);
 
         switch (noteCollectLuaResultEnum) {
             // Redis 中布隆过滤器不存在
@@ -1060,7 +1119,9 @@ public class NoteServiceImpl implements NoteService {
 
                 // 目标笔记已经被收藏
                 if (count > 0) {
-                    // TODO: 异步初始化布隆过滤器
+                    // 异步初始化布隆过滤器
+                    threadPoolTaskExecutor.submit(() ->
+                            batchAddNoteCollect2BloomAndExpire(userId, expireSeconds, bloomUserNoteCollectListKey));
                     throw new BizException(ResponseCodeEnum.NOTE_ALREADY_COLLECTED);
                 }
 
@@ -1136,6 +1197,7 @@ public class NoteServiceImpl implements NoteService {
                 .noteId(noteId)
                 .type(CollectUnCollectNoteTypeEnum.COLLECT.getCode()) // 收藏笔记
                 .createTime(now)
+                .noteCreatorId(creatorId) // 笔记发布者 ID
                 .build();
 
         // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
@@ -1258,8 +1320,8 @@ public class NoteServiceImpl implements NoteService {
         // 笔记ID
         Long noteId = unCollectNoteReqVO.getId();
 
-        // 1. 校验笔记是否真实存在
-        checkNoteIsExist(noteId);
+        // 1. 校验被点赞的笔记是否存在，若存在，则获取发布者用户 ID
+        Long creatorId = checkNoteIsExistAndGetCreatorId(noteId);
 
         // 2. 校验笔记是否被收藏过
         // 当前登录用户ID
@@ -1313,6 +1375,7 @@ public class NoteServiceImpl implements NoteService {
                 .noteId(noteId)
                 .type(CollectUnCollectNoteTypeEnum.UN_COLLECT.getCode()) // 取消收藏笔记
                 .createTime(LocalDateTime.now())
+                .noteCreatorId(creatorId)
                 .build();
 
         // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
