@@ -625,7 +625,7 @@ public class NoteServiceImpl implements NoteService {
         Long noteId = likeNoteReqVO.getId();
 
         // 1. 校验被点赞的笔记是否存在
-        checkNoteIsExist(noteId);
+        Long creatorId = checkNoteIsExistAndGetCreatorId(noteId);
 
         // 2. 判断目标笔记，是否已经点赞过
         // 当前登录用户ID
@@ -737,6 +737,7 @@ public class NoteServiceImpl implements NoteService {
                 .noteId(noteId)
                 .type(LikeUnlikeNoteTypeEnum.LIKE.getCode()) // 点赞笔记
                 .createTime(now)
+                .noteCreatorId(creatorId)   // 笔记发布者 ID
                 .build();
 
         // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
@@ -832,40 +833,42 @@ public class NoteServiceImpl implements NoteService {
      * 检查笔记是否存在
      * @param noteId
      */
-    private void checkNoteIsExist (Long noteId){
-        // 先从本地缓存中获取
+    private Long checkNoteIsExistAndGetCreatorId (Long noteId){
+        // 先从本地缓存校验
         String findNoteDetailRspVOStrLocalCache = LOCAL_CACHE.getIfPresent(noteId);
-        // 解析 JSON 字符串为 VO 对象
+        // 解析 Json 字符串为 VO 对象
         FindNoteDetailRspVO findNoteDetailRspVO = JsonUtils.parseObject(findNoteDetailRspVOStrLocalCache, FindNoteDetailRspVO.class);
 
-        // 若本地缓存中没有
+        // 若本地缓存没有
         if (Objects.isNull(findNoteDetailRspVO)) {
-            // 再从 Redis 中获取
+            // 再从 Redis 中校验
             String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
 
             String noteDetailJson = redisTemplate.opsForValue().get(noteDetailRedisKey);
 
-            // 解析 JSON 字符串为 VO 对象
+            // 解析 Json 字符串为 VO 对象
             findNoteDetailRspVO = JsonUtils.parseObject(noteDetailJson, FindNoteDetailRspVO.class);
 
-            // 若都不存在，则查询数据库校验是否存在
+            // 都不存在，再查询数据库校验是否存在
             if (Objects.isNull(findNoteDetailRspVO)) {
-                int count = noteDOMapper.selectCountByNoteId(noteId);
+                // 笔记发布者用户 ID
+                Long creatorId = noteDOMapper.selectCreatorIdByNoteId(noteId);
 
-                // 若数据库页不存在，则提示用户
-                if (count == 0) {
+                // 若数据库中也不存在，提示用户
+                if (Objects.isNull(creatorId)) {
                     throw new BizException(ResponseCodeEnum.NOTE_NOT_FOUND);
                 }
 
-                // 若数据库存在，则同步一下缓存
+                // 若数据库中存在，异步同步一下缓存
                 threadPoolTaskExecutor.submit(() -> {
-                    FindNoteDetailReqVO findNoteDetailReqVO = FindNoteDetailReqVO.builder()
-                            .id(noteId)
-                            .build();
+                    FindNoteDetailReqVO findNoteDetailReqVO = FindNoteDetailReqVO.builder().id(noteId).build();
                     findNoteDetail(findNoteDetailReqVO);
                 });
+                return creatorId;
             }
         }
+
+        return findNoteDetailRspVO.getCreatorId();
     }
 
     /**
@@ -930,8 +933,8 @@ public class NoteServiceImpl implements NoteService {
         // 笔记ID
         Long noteId = unlikeNoteReqVO.getId();
 
-        // 1. 校验笔记是否真实存在
-        checkNoteIsExist(noteId);
+        // 1. 校验笔记是否真实存在，若存在，则获取发布者用户 ID
+        Long creatorId = checkNoteIsExistAndGetCreatorId(noteId);
 
         // 2. 校验笔记是否被点赞过
         // 当前登录用户ID
@@ -984,6 +987,7 @@ public class NoteServiceImpl implements NoteService {
                 .noteId(noteId)
                 .type(LikeUnlikeNoteTypeEnum.UNLIKE.getCode()) // 取消点赞笔记
                 .createTime(LocalDateTime.now())
+                .noteCreatorId(creatorId)
                 .build();
 
         // 构建消息对象，并将 DTO 转成 Json 字符串设置到消息体中
