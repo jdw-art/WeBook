@@ -73,7 +73,7 @@ table:
 rocketmq:
   name-server: 127.0.0.1:9876 # name server 地址
   consumer:
-    group: xiaohashu_group
+    group: webook_group
     pull-batch-size: 5 # 每次拉取的最大消息数
 
 
