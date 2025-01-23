@@ -27,6 +27,7 @@
     <module>webook-user-relation</module>
       <module>webook-count</module>
     <module>webook-data-align</module>
+    <module>webook-comment</module>
   </modules>
 
   <properties>
