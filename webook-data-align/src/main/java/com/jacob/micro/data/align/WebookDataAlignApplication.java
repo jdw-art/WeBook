@@ -1,4 +1,4 @@
-package com.jacob.micro.data.align.domain;
+package com.jacob.micro.data.align;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @Author: Jacob
  * @Description: TODO
- * @Date: 2025/1/21 19:53
+ * @Date: 2025/1/23 11:38
  * @Version: 1.0
  */
 @SpringBootApplication
