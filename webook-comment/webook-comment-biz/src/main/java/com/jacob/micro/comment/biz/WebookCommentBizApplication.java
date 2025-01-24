@@ -3,6 +3,7 @@ package com.jacob.micro.comment.biz;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.retry.annotation.EnableRetry;
 
 /**
  * @Author: Jacob
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.jacob.micro.comment.biz.domain.mapper")
+@EnableRetry    // 启用 Spring Retry
 public class WebookCommentBizApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebookCommentBizApplication.class, args);
